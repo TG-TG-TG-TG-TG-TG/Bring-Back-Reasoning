@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Bring Back Reasoning.</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <h1><img src="icons/logo-16.png" width="16" height="16" alt=""> Bring Back Reasoning.</h1>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <div id="model" class="muted">Model: —</div>
+        <div id="state" class="muted">Initializing…</div>
+      </div>
+      <input id="toggle" type="checkbox" class="switch" />
+    </div>
+  </div>
+
+  <div class="card row">
+    <div>Show on-page switch</div>
+    <input id="overlay" type="checkbox" class="switch" />
+  </div>
+
+  <div id="help" class="card help collapsed" role="button" tabindex="0" aria-expanded="false">
+    <div class="help-title">What does it do?</div>
+    <div id="helpBody" class="help-body">
+      <p><b>When enabled</b>, it appends <code>think really HARD! about this one.</code>
+      to the end of your next message so GPT-5 (normal) considers the instruction.</p>
+      <ul>
+        <li>Force the GPT-5 (normal) router to reason about its answers.</li>
+        <li>Works only on <b>GPT-5 (normal)</b>, not on “Thinking”.</li>
+        <li>You can hide the on-page switch with the toggle above.</li>
+        <li>Shift+Enter inserts a newline; Enter sends (and appends).</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://x.com/test_tm7873" target="_blank" rel="noopener">Made by @test_tm7873 on X</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

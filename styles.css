@@ -1,0 +1,82 @@
+/* Floating toggle */
+#think-hard-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 112px;
+  z-index: 999999;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(32,33,35,.92), rgba(32,33,35,.84));
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font: 600 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; gap: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  backdrop-filter: blur(10px);
+
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    box-shadow .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+#think-hard-toggle:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(0,0,0,.30); }
+
+#think-hard-toggle .row { display: flex; align-items: center; gap: 10px; }
+#think-hard-toggle .icon { font-size: 14px; opacity: .95; }
+#think-hard-toggle .label { opacity: .9; letter-spacing: .2px; }
+#think-hard-toggle .status { font: 500 11px/1.2 system-ui; color: rgba(255,255,255,.75); }
+
+/* Credit link */
+#think-hard-toggle .maker {
+  font: 500 11px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  align-self: flex-end;
+}
+#think-hard-toggle .maker:hover { text-decoration: underline; color: rgba(255,255,255,.92); }
+
+/* Switch */
+#think-hard-toggle input[type="checkbox"] {
+  width: 42px; height: 22px; appearance: none; background: #4b5563;
+  border-radius: 999px; position: relative; cursor: pointer; transition: background .2s;
+  outline: none; border: 0;
+}
+#think-hard-toggle input[type="checkbox"]::after {
+  content: ""; position: absolute; top: 2px; left: 2px;
+  width: 18px; height: 18px; background: linear-gradient(180deg,#fff,#eaeaea);
+  border-radius: 50%;
+  transition: transform .2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.15) inset;
+}
+#think-hard-toggle input[type="checkbox"]:checked { background: #22c55e; }
+#think-hard-toggle input[type="checkbox"]:checked::after { transform: translateX(20px); }
+#think-hard-toggle input[type="checkbox"]:focus-visible { box-shadow: 0 0 0 3px rgba(34,197,94,.35); }
+
+/* Locked + hidden states */
+#think-hard-toggle.locked { opacity: .55; border-color: rgba(239,68,68,.5); }
+#think-hard-toggle.locked .status { color: #fca5a5; }
+#think-hard-toggle.hidden {
+  opacity: 0;
+  transform: translateY(8px) scale(.98);
+  pointer-events: none;
+}
+
+/* Toast */
+#think-hard-toast {
+  position: fixed; right: 16px; bottom: 64px; z-index: 1000000;
+  padding: 10px 12px; border-radius: 12px;
+  background: rgba(17,17,17,.95); color: #fff; border: 1px solid rgba(255,255,255,.12);
+  font: 600 12px/1.2 system-ui; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  max-width: 60ch;
+}
+#think-hard-toast.error { border-color: rgba(239,68,68,.5); }
+#think-hard-toast.ok    { border-color: rgba(34,197,94,.5); }
+
+@media (max-width: 520px) {
+  #think-hard-toggle { right: 12px; bottom: 96px; padding: 9px 12px; }
+  #think-hard-toggle .label { display: none; }
+}
