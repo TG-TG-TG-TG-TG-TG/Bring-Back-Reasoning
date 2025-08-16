@@ -1,5 +1,5 @@
 # Bring-Back-Reasoning
-
+(Because Openai incresed GPT-5-Thinking limits to 3k (as for time of writing) i will spend less time fixing/updating this extention. sorry!
 Force the **GPT-5 (normal)** router to reason about its answers by appending a tiny instruction to your message — only when the correct model is selected.
 
 > When enabled, the extension adds
